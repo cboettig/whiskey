@@ -1,0 +1,35 @@
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="#" class="logo">
+      <img src="/img/logo.png" alt="logo">
+    </a>
+    <a href="#" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        {% for link in site.data.navigation %}
+          {% if link.url contains 'http' %}
+              {% assign domain = '' %}
+              {% else %}
+              {% assign domain = site.url %}
+          {% endif %}
+          <li class="nav-link">
+            <a href="{{ domain }}{{ link.url }}"
+               {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <!--
+    <div class="navigation-tools">
+      <div class="search-bar">
+        <form role="search">
+          <input type="search" placeholder="Enter Search" />
+          <button type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    -->
+  </div>
+</header>
