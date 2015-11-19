@@ -1,0 +1,13 @@
+<ul class="bullets">
+  {% for bullet in page.bullets %}
+  <li class="bullet">
+    <div class="bullet-icon bullet-icon-1">
+      <img src="{{bullet.img}}" alt="">
+    </div>
+    <div class="bullet-content">
+      <h2>{{bullet.title}}</h2>
+      <p>{{bullet.text}}</p>
+      </div>
+  </li> 
+  {% endfor %}
+</ul>
