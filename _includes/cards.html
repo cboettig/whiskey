@@ -1,0 +1,16 @@
+<div class="cards">
+{% for card in page.cards %}
+  <div class="card">
+    <div class="card-image">
+      <img src="{{card.img}}" alt="">
+    </div>
+    <div class="card-header">
+      First Card
+    </div>
+    <div class="card-copy">
+      <p>{{card.text}}</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+

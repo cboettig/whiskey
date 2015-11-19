@@ -9,8 +9,8 @@ analytics: none
 navigation:  
   - title: Home
     url: #
-  - title: About
-    url: #
+  - title: cards example 
+    url: /cards_example.html
   - title: Contact
     url: #
 
