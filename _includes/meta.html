@@ -1,0 +1,35 @@
+  <!-- HTML5 metadata -->
+  <meta name="author" content="{{ site.author.name }}" />
+  <!-- RDFa Metadata (in DublinCore) -->
+  <meta property="dc:title" content="{{ page.title }}" />
+  <meta property="dc:creator" content="{{ site.author.name }}" />
+  <meta property="dc:date" content="{{ page.date }}" />
+  <meta property="dc:format" content="text/html" />
+  <meta property="dc:language" content="en" />
+  <meta property="dc:identifier" content="{{ page.url }}" />
+  <meta property="dc:rights" content="cc-by" />
+  <meta property="dc:type" content="website" /> 
+  <!-- RDFa Metadata (in OpenGraph) -->
+  <meta property="og:author" content="{{author.homepage}}"/>  
+  <meta property="http://ogp.me/ns/profile#first_name" content="{{ site.author.givenName }}"/>
+  <meta property="http://ogp.me/ns/profile#last_name" content="{{ site.author.familyName }}"/>
+  <meta property="http://ogp.me/ns/article#published_time" content="{{ page.date }}" />
+  <meta property="og:type" content="website" /> 
+  <meta property="og:locale" content="{{ site.locale }}">
+	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+	{% if page.excerpt %}<meta property="og:description" content="{{ page.excerpt | strip_html }}">{% endif %}
+	<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+	<meta property="og:site_name" content="{{ site.title }}">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  {% if page.excerpt %}<meta name="twitter:description" content="{{ page.excerpt | strip_html }}">{% endif %}
+  {% if site.author.twitter %}<meta name="twitter:site" content="@{{ site.author.twitter }}">{% endif %}
+  {% if author.twitter %}<meta name="twitter:creator" content="@{{ author.twitter }}">{% endif %}
+  {% if page.image.feature %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}/images/{{ page.image.feature }}">
+  {% else %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="{% if page.image.thumb %}{{ site.url }}/img/{{ page.image.thumb }}{% else %}{{ site.url }}/img/{{ site.logo }}{% endif %}">
+  {% endif %}

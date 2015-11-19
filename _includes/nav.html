@@ -6,7 +6,7 @@
     <a href="#" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
-        {% for link in site.data.navigation %}
+        {% for link in site.navigation %}
           {% if link.url contains 'http' %}
               {% assign domain = '' %}
               {% else %}
@@ -19,10 +19,10 @@
         {% endfor %}
       </ul>
     </nav>
-    <!--
     <div class="navigation-tools">
       <div class="search-bar">
-        <form role="search">
+        <form role="search" method="get" action="http://google.com/search">
+          <input type="hidden" name="q" value="site:{{site.url}}" />
           <input type="search" placeholder="Enter Search" />
           <button type="submit">
             <i class="fa fa-search"></i>
@@ -30,6 +30,5 @@
         </form>
       </div>
     </div>
-    -->
   </div>
 </header>
