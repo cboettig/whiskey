@@ -2,6 +2,7 @@
 
 title: whiskey
 url: "http://cboettig.github.io/whiskey"
+baseurl: "/whiskey"
 locale: en
 logo: "logo.png"
 analytics: none

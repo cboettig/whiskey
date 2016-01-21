@@ -10,7 +10,7 @@
           {% if link.url contains 'http' %}
               {% assign domain = '' %}
               {% else %}
-              {% assign domain = site.url %}
+              {% assign domain = site.baseurl %}
           {% endif %}
           <li class="nav-link">
             <a href="{{ domain }}{{ link.url }}"
